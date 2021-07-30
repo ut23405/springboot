@@ -1,0 +1,11 @@
+server:
+  port: 8765
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: (値をセットする)
+            clientSecret: (値をセットする)
+

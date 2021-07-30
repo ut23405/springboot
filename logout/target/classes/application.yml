@@ -1,0 +1,13 @@
+server:
+  port: 8765
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 786635bad0b7619771e7
+            clientSecret: d430b84185abf98e31639d71e5c9cdfd7a61ce67
+#logging:
+#  level:
+#    org.springframework.security: DEBUG

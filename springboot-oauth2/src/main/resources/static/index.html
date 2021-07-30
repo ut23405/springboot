@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<title>test</title>
+</head>
+<body>
+	<div id="div1">
+		<a href="/oauth2/authorization/github">ログイン</a>
+		<!-- http://localhost:8765/oauth2/authorization/githubと同じ-->
+	</div>
+	<div id="div2" style="display:none">
+		<p>ログインしたIDは、<span id="testuser"></span>です。</p>
+		<div>
+			<button onClick="logout()">ログアウト</button>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+	<script>
+		$.ajaxSetup({
+			beforeSend: function (xhr, settings) {
+				if (settings.type == 'POST') {
+					//ヘッダ名のX-XSRF-TOKENにクッキーのXSRF-TOKENの値をセット
+					if (settings.url == "/logout") {
+						xhr.setRequestHeader("X-XSRF-TOKEN",
+							Cookies.get('XSRF-TOKEN'));
+					}
+				}
+			}
+		});
+		//画面表示時に実行。認証されていない場合はUNAUTHORIZED(401)が返る
+		$.get("/testuser", function (data) {
+			$("#testuser").html(data);
+			$("#div1").hide();
+			$("#div2").show();
+		});
+		//ログアウトクリック時に実行
+		var logout = function () {
+			$.post("/logout", function () {
+				$("#testuser").html('');
+				$("#div1").show();
+				$("#div2").hide();
+			})
+		}
+	</script>
+</body>
+
+</html>
