@@ -12,7 +12,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>springboot-hello</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-hello</name>
+	<name>springboot-form-submit</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
