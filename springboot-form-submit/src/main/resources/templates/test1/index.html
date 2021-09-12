@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <title>submit</title>
   </head>
   <body>
-    <form method="get" action="testform">
+    <form method="get" th:action="@{/testform}">
       <input type="text" name="text1" />
       <input type="submit" value="送信ボタン" />
     </form>
