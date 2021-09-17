@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>test</title>
+    <script th:inline="javascript">
+    	const syain =/*[[${syain}]]*/
+		syain.forEach(function (a) {
+			console.log(a); //{id: 1, name: 'suzuki'} {id: 2, name: 'tanaka'}
+		});
+    </script>
+  </head>
+  <body>
+test
+  </body>
+</html>
