@@ -19,22 +19,22 @@ public class BatchConfig {
 	@Autowired private StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Job TestJob1(Step TestStep1,Step TestStep2) {
+    public Job testJob1(Step testStep1,Step testStep2) {
         return jobBuilderFactory.get("testJob")
         		.incrementer(new RunIdIncrementer())
-				.start(TestStep1)
-				.next(TestStep2)
+				.start(testStep1)
+				.next(testStep2)
                 .build();
     }
 
     @Bean
-    public Step TestStep1() {
+    public Step testStep1() {
         return stepBuilderFactory.get("TestStep11")
                 .tasklet(HelloFirst)
                 .build();
     }
     @Bean
-    public Step TestStep2() {
+    public Step testStep2() {
         return stepBuilderFactory.get("TestStep21")
                 .tasklet(HelloSecond)
                 .build();
