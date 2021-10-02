@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springboot-jc-css</artifactId>
+	<artifactId>springboot-js-css</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-jc-css</name>
+	<name>springboot-js-css</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
