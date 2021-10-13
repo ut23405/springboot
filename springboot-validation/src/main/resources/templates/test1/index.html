@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>check</title>
+</head>
+<body >
+
+<form method="post" th:action="@{/test1/inputCheck}" th:object="${test1Form}">
+	<p><input type="text" th:field="*{id}"/></p>
+	<div th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+
+	<p><input type="text" th:field="*{name}"></p>
+	<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+		
+	<p><input type="text" th:field="*{romaji}"></p>
+	<div th:if="${#fields.hasErrors('romaji')}" th:errors="*{romaji}"></div>
+	<p><input type="submit" value="送信ボタン"></p>
+</form>
+</body>
+</html>
