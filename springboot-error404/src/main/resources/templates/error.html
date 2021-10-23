@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<style>
+	table {border-collapse: collapse;width: 300px;}
+	td {border: 1px solid black;padding-left:5px;}
+</style>
+</head>
+
+<body>
+<table style>
+<tr><td>timestamp</td><td th:text="${timestamp}"></td></tr>
+<tr><td>status</td><td th:text="${status}"></td></tr>
+<tr><td>error</td><td th:text="${error}"></td></tr>
+<tr><td>exception</td><td th:text="${exception}"></td></tr>
+<tr><td>message</td><td th:text="${message}"></td></tr>
+<tr><td>errors</td><td th:text="${errors}"></td></tr>
+<tr><td>trace</td><td th:text="${trace}"></td></tr>
+<tr><td>path</td><td th:text="${path}"></td></tr>
+</body>
+</html>

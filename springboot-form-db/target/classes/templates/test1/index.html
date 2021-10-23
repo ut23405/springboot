@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>check</title>
+</head>
+<body >
+<form method="post" th:action="@{/test1/testform}" th:object="${test1Form}">
+<p><input type="text" id="id" name="id"  th:field="*{id}"/></p>
+<p><input type="text" id="name" name="name" th:field="*{name}"></p>
+<p><input type="submit" value="送信ボタン"></p>
+</form>
+</body>
+</html>
