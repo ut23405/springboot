@@ -13,6 +13,7 @@ public class Test1Form {
 	private String name;
 	
 	@NotBlank(message="必須項目です")
+	@Size(max=5,message = "最大5文字までです")
 	private String romaji;
 
 	public String getId() {

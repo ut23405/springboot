@@ -13,11 +13,12 @@ public class MainController {
         return "test1/index";
     }
 
-	@PostMapping("/testform")
+	@PostMapping("/")
 	public String output1(
-		@RequestParam(name = "text1") String str1,
+		@RequestParam String text1,
 		Model model) {
-		model.addAttribute("moji1", str1);
+		model.addAttribute("moji1", text1);
+		model.addAttribute("moji2", "こんにちは");
 		return "test1/testform";
 	}
 }
