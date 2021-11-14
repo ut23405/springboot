@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springboot-form-session</artifactId>
+	<artifactId>springboot-session-controller</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-form-session</name>
+	<name>springboot-session-controller</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
