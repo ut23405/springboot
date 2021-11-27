@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>test</title>
+</head>
+<body>
+	<div th:if="${param.error}">
+		ユーザ名またはパスワードが異なります。
+	</div>
+	<div th:if="${param.logout}">
+		ログアウトしました。
+	</div>
+	<form th:action="@{/test1/testform}" method="post">
+		ユーザ名：<input type="text" name="username" />
+		パスワード：<input type="password" name="password" />
+		<input type="submit" value="ログイン" />
+	</form>
+</body>
+</html>

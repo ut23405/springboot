@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>テストページ</title>
+</head>
+<body>
+	<p>ログインに成功しました</p>
+	<p>ユーザ名:
+		<span th:text="${#authentication.principal.username}">
+		</span></p>
+	<form th:action="@{/logout}" method="post">
+		<button type="submit">ログアウト</button>
+	</form>
+</body>
+</html>
