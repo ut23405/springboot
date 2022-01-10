@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.test1;
 
-public class Test1Form {
+public class SyainDto {
 	private Integer id;
 	private String name;
 

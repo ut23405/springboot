@@ -5,7 +5,7 @@
 <title>check</title>
 </head>
 <body >
-<form method="post" th:action="@{/test1/testform}" th:object="${test1Form}">
+<form method="post" th:action="@{/test1/update}" th:object="${syainForm}">
 <p><input type="text" th:field="*{id}"/></p>
 <p><input type="text" th:field="*{name}"></p>
 <p><input type="submit" value="送信ボタン"></p>
