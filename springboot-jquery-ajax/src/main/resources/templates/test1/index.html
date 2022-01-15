@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>check</title>
+  </head>
+  <body>
+    <form method="post">
+      <p><input type="text" name="name" th:value="鈴木"/></p>
+      <p><input type="text" name="romaji" th:value="suzuki"/></p>
+      <p><input type="button" id="button1" value="送信" /></p>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#button1").click(function () {
+          $.ajax({
+            url: "/test1/check",
+            type: "POST",
+            data: $("form").serialize(),
+            dataType: "json",
+            timespan: 1000,
+          })
+            .done(function (data1, textStatus, jqXHR) {
+              console.log(jqXHR.status); // 200
+              console.log(textStatus); // success
+              console.log(data1["memo"]); // 登録しました
+              console.log(data1["name"]); // 鈴木 さん
+              console.log(data1["romaji"]); // suzuki san
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+              console.log(jqXHR.status); //例：404
+              console.log(textStatus); //例：error
+              console.log(errorThrown); //例：NOT FOUND
+            })
+            .always(function () {
+              console.log("complete"); // complete
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
