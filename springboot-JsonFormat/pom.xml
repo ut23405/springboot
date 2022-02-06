@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springboot-jquery-ajax</artifactId>
+	<artifactId>springboot-JsonFormat</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-jquery-ajax</name>
+	<name>springboot-JsonFormat</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
