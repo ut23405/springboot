@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>check</title>
+</head>
+
+<body>
+	<form method="post">
+		<p><input type="text" name="name" value="suzuki" /></p>
+		<p><input type="text" name="localDate" value="2022/02/05" /></p>
+		<p><input type="text" name="localTime" value="23:47:22" /></p>
+		<p><input type="text" name="localDateTime" value="2021/10/06 23:47:22.175" /></p>
+		<p><input type="text" name="date" value="2021/10/06 23:47:22.175" /></p>
+		<p><input type="button" id="button1" value="送信" /></p>
+	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$("#button1").click(function () {
+				$.ajax({
+					url: "/check",
+					type: "POST",
+					data: $("form").serialize(),
+					dataType: "json",
+					timespan: 1000,
+				})
+					.done(function (data1, textStatus, jqXHR) {
+						console.log(jqXHR.status); // 200
+						console.log(data1["name"]); // suzuki
+						console.log(data1["localDate"]); // 2022-02-05
+						// @JsonFormat使用時、2022/02/05
+						console.log(data1["localTime"]); // 23:47:22
+						console.log(data1["localDateTime"]); //2021-10-06T23:47:22.175
+						// @JsonFormat使用時、2021/10/06 23:47:22.175
+						console.log(data1["date"]); //2021-10-06T14:47:22.175+00:00
+						// @JsonFormat使用時、2021/10/06 14:47:22.175
+					})
+					.fail(function (jqXHR, textStatus, errorThrown) {
+						console.log(jqXHR.status); //例：404
+						console.log(textStatus); //例：error
+						console.log(errorThrown); //例：NOT FOUND
+					})
+					.always(function () {
+						console.log("complete"); // complete
+					});
+			});
+		});
+	</script>
+</body>
+
+</html>
