@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>submit</title>
+  </head>
+  <body>
+    <form method="post" th:action="@{/testform}">
+      <p th:text="${syain.name}"></p>
+      <p>メモ：<input type="text" name="textMemo" /></p>
+      <input type="submit" value="送信ボタン" />
+    </form>
+  </body>
+</html>
