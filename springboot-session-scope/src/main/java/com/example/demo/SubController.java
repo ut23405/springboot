@@ -11,9 +11,9 @@ public class SubController {
 	@Autowired Syain syain;
 	
 	@PostMapping("/testform")
-	public String output1(@RequestParam String text1, Model model 
+	public String output1(@RequestParam String textMemo, Model model 
 			) {
-		model.addAttribute("moji1", text1);
+		model.addAttribute("memo", textMemo);
 		model.addAttribute(syain);
 		return "test1/testform";
 	}
